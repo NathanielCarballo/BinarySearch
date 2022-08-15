@@ -1,2 +1,2 @@
 # BinarySearch
-Small program that searched for users input digit.
+Small program that searches for users input digit.
