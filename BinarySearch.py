@@ -18,9 +18,8 @@ def binarySearch(numberlist, l, r, searchedvalue):
     else:
         return -1
 
-numberlist = random.sample(range(0,1000),1000)
-
-searchedvalue = random.randint(0,1000)
+numberlist = sorted(random.sample(range(0, 1000), 1000))
+searchedvalue = random.randint(0, 999)
 
 result = binarySearch(numberlist, 0, len(numberlist)-1,searchedvalue)
 
