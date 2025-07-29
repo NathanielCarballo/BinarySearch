@@ -19,7 +19,7 @@ def binary_search(numberlist: List[int], l: int, r: int, searchedvalue: int, deb
     Returns:
         int: The index of the searchedvalue in numberlist if found, else -1.
     """
-    if r >= l:
+    while l <= r:
         mid = l + (r - l) // 2
 
         if debug:
@@ -28,14 +28,12 @@ def binary_search(numberlist: List[int], l: int, r: int, searchedvalue: int, deb
         if numberlist[mid] == searchedvalue:
             return mid
         
-        elif numberlist[mid] > searchedvalue:
-            return binary_search(numberlist, l, mid-1, searchedvalue)
-
+        elif numberlist[mid] < searchedvalue:
+            l = mid +1
         else:
-            return binary_search(numberlist, mid+1, r, searchedvalue)
-
-    else:
-        return -1
+            r = mid - 1
+            
+    return -1
 
 numberlist = sorted(random.sample(range(0, 1000), 1000))
 searchedvalue = random.randint(0, 999)
